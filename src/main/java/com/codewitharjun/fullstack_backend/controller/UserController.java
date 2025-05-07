@@ -3,9 +3,12 @@ package com.codewitharjun.fullstack_backend.controller;
 import com.codewitharjun.fullstack_backend.model.User;
 import com.codewitharjun.fullstack_backend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 // this is a specialized version of controller annotation. It includes the @Controller and @ResponseBody annotations, and as a result, simplifies the controller implementation. Since controller is annotated ith the @Restcontroller annotation, the @ResponseBody isn't required
 @RestController
@@ -17,5 +20,10 @@ public class UserController {
     @PostMapping("/user")
     User newUser(@RequestBody User newUser){
         return userRepository.save(newUser);
+    }
+
+    @GetMapping("/users")
+    List<User> getAllUsers(){
+        return userRepository.findAll(); // This is given by JPA
     }
 }
