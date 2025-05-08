@@ -6,9 +6,9 @@ export default function Navbar() {
     <div>
       <div className="navbar navbar-expand-lg navbar-dark bg-primary">
         <div className="container-fluid">
-          <a href="#" className="navbar-brand">
+          <Link className="navbar-brand" to="/">
             Full Stack Application
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -20,7 +20,9 @@ export default function Navbar() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <Link className="btn btn-outline-light" to="/adduser">Add user</Link>
+          <Link className="btn btn-outline-light" to="/adduser">
+            Add user
+          </Link>
         </div>
       </div>
     </div>
